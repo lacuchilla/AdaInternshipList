@@ -1,1 +1,6 @@
 <h1>Here are all of the companies!</h2>
+  <ul>
+  <% @companies.each do |company| %>
+    <li><%= company.name %></li>
+  <% end %>
+  </ul>
