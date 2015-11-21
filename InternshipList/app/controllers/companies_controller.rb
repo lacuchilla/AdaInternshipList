@@ -4,6 +4,7 @@ class CompaniesController < ApplicationController
   end
 
   def new
+    @url = "create"
     @company = Company.new
   end
 
@@ -23,6 +24,7 @@ class CompaniesController < ApplicationController
   end
 
   def destroy
+    Company.destroy(params[:id])
   end
 
 private
