@@ -18,9 +18,15 @@ class CompaniesController < ApplicationController
   end
 
   def edit
+    @url = "update"
+    @legend = "Update Company Information"
+    @company = Company.find(params[:id])
+
   end
 
   def update
+    Company.update(params[:id], company_params[:company])
+    redirect_to "/companies"
   end
 
   def destroy
