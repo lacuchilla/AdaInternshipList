@@ -3,7 +3,7 @@
   <li><%= @company.name %></li>
   <li><%= @company.location %></li>
   <li><%= @company.description %></li>
-  <li><%= @company.website %></li>
+  <li><%= link_to @company.website, "#{@company.website}" %></li>
 </ul>
 <%= link_to "Edit Company", "/companies/#{@company.id}/edit" %>
 <%= link_to "Delete Company", "/companies/#{@company.id}", :method => :delete,

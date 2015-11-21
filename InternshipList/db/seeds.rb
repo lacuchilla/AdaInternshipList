@@ -27,3 +27,12 @@ company_list = [
 company_list.each do |company|
   Company.create(company)
 end
+
+
+person_list = [
+  {name: "Caroline Harbitz", title: "Data Scientist", email: "caroline@nordstrom.com", company_id: 11},
+  {name: "Gina Schmalzle", title: "Data Scientist", email: "gina@nordstrom.com", company_id: 11},
+]
+person_list.each do |person|
+  Person.create(person)
+end
