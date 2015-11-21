@@ -5,3 +5,5 @@
   <li><%= @company.description %></li>
   <li><%= @company.website %></li>
 </ul>
+<%= link_to "Delete Company", "/companies/#{@company.id}", :method => :delete,
+      :onclick => "return confirm('Are you sure you want to delete this company?')" %>

@@ -25,6 +25,7 @@ class CompaniesController < ApplicationController
 
   def destroy
     Company.destroy(params[:id])
+    redirect_to "/companies/"
   end
 
 private
