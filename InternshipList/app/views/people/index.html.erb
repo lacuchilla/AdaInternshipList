@@ -1,4 +1,4 @@
-<h1>Here Are All The People!</h1>
+<h1>Contacts for <%= @company.name %></h1>
   <ul>
   <% @people.each do |person| %>
     <li><%= link_to "#{person.name}", "/companies/#{@company_id}/people/#{person.id}/" %></li>

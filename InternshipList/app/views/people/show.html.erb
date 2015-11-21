@@ -1,0 +1,9 @@
+<h1>Contact Details</h1>
+<ul>
+  <li><%= @person.name %></li>
+  <li><%= @person.title %></li>
+</ul>
+<%= link_to "Edit Contact", "/companies/#{@person.company.id}/people/#{@person.id}/edit" %>
+<%= link_to "Delete Contact", "/companies/#{@person.company.id}/people/#{@person.id}/destroy", :method => :delete,
+      :onclick => "return confirm('Are you sure you want to delete this contact?')" %>
+<%= link_to "Back to List of Companies", companies_path %>

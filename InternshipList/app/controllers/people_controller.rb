@@ -1,6 +1,7 @@
 class PeopleController < ApplicationController
   def index
     @company_id = params[:company_id]
+    @company = Company.find(@person.company_id(params[:id]))
     @people = Person.where(company_id: params[:company_id])
   end
 
@@ -21,12 +22,17 @@ class PeopleController < ApplicationController
   end
 
   def edit
+    @url = "edit"
+    @legend = "Update a Contact"
+    @person = person_params[:person][:company_id]
   end
 
   def update
   end
 
   def destroy
+      Person.destroy(params[:id])
+      redirect_to "/companies/#{@person.company.id}/people"
   end
 
   private
