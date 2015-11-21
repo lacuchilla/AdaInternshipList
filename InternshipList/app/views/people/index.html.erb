@@ -1,7 +1,7 @@
 <h1>Here Are All The People!</h1>
   <ul>
   <% @people.each do |person| %>
-    <li><%= link_to "#{person.name}", "/companies/#{@company.id}/people/#{person.id}/" %></li>
+    <li><%= link_to "#{person.name}", "/companies/#{@company_id}/people/#{person.id}/" %></li>
   <% end %>
   </ul>
-  <%= link_to "Add a person", new_person_path %>
+<%= link_to "Add a person", "/companies/#{@company_id}/people/new" %>

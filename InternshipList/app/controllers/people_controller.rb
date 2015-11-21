@@ -1,6 +1,7 @@
 class PeopleController < ApplicationController
   def index
-    @people = Person.all
+    @company_id = params[:company_id]
+    @people = Person.where(company_id: params[:company_id])
   end
 
   def new
@@ -10,8 +11,8 @@ class PeopleController < ApplicationController
   end
 
   def create
-    Person.create(person_params[:person])
-    redirect_to "/companies/#{@company.id}/people"
+    p = Person.create(person_params[:person])
+    redirect_to company_people_path(params[:company_id])
   end
 
   def show
@@ -31,6 +32,6 @@ class PeopleController < ApplicationController
   private
 
   def person_params
-    params.permit(task: [:name, :title, :email, :company_id])
+    params.permit(person: [:name, :title, :email, :company_id])
   end
 end
