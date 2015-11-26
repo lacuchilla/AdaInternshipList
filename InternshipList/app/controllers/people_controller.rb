@@ -7,13 +7,12 @@ class PeopleController < ApplicationController
   end
 
   def new
-    @url = "create"
     @legend = "Add a Contact"
     @person = Person.new
   end
 
   def create
-    p = Person.create(person_params[:person])
+    person = Person.create(name: person_params[:person][:name], company_id: params[:company_id])
     redirect_to company_people_path(params[:company_id])
   end
 
@@ -29,11 +28,14 @@ class PeopleController < ApplicationController
   end
 
   def update
+    @person = Person.find(params[:id])
+    Person.update(params[:id], person_params[:person])
+    redirect_to company_people_path(params[:company_id])
   end
 
   def destroy
-      Person.destroy(params[:id])
-      redirect_to "/companies/#{@person.company.id}/people"
+    Person.destroy(params[:id])
+    redirect_to company_people_path(params[:company_id])
   end
 
   private

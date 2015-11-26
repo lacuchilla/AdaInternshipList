@@ -5,7 +5,10 @@
   <li><%= @company.description %></li>
   <li><%= link_to @company.website, "#{@company.website}" %></li>
 </ul>
-<%= link_to "Edit Company", "/companies/#{@company.id}/edit" %>
-<%= link_to "Delete Company", "/companies/#{@company.id}", :method => :delete,
-      :onclick => "return confirm('Are you sure you want to delete this company?')" %>
-<%= link_to "View People Associated With This Company", company_people_path(company_id: @company.id) %>
+
+<ul>
+  <li><%= link_to "Edit Company", "/companies/#{@company.id}/edit" %></li>
+  <li><%= link_to "Delete Company", "/companies/#{@company.id}", :method => :delete,
+      data: { confirm: "Are you sure you want to delete this company?"} %></li>
+  <li><%= link_to "View People Associated With This Company", company_people_path(params[:id]) %></li>
+  <li><%= link_to "Back to List of Companies", companies_path %></li>

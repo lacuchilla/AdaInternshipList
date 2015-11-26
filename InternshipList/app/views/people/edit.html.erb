@@ -1,5 +1,5 @@
 <h1>Update a Contact</h1>
-<%= form_for @person, url: {action: "#{@url}"} do |f| %>
+<%= form_for @person, url: {action: "update"} do |f| %>
   <fieldset>
     <legend> <%= @legend %></legend>
     <%= f.label :name %>
@@ -10,5 +10,5 @@
     <%= f.text_field :email %>
 
   </fieldset>
-  <%= f.submit %>
+  <%= f.submit("Save Changes") %>
 <% end %>

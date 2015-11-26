@@ -1,5 +1,5 @@
 <h1>Add a Contact</h1>
-<%= form_for @person, url: {action: "#{@url}"} do |f| %>
+<%= form_for @person, url: {action: "create"} do |f| %>
   <fieldset>
     <legend> <%= @legend %></legend>
     <%= f.label :name %>
@@ -8,7 +8,7 @@
     <%= f.text_field :title %>
     <%= f.label :email %>
     <%= f.text_field :email %>
-    
+
   </fieldset>
   <%= f.submit %>
 <% end %>

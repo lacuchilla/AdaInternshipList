@@ -4,4 +4,5 @@
     <li><%= link_to "#{person.name}", "/companies/#{person.company.id}/people/#{person.id}/" %></li>
   <% end %>
   </ul>
-<%= link_to "Add a person", "/companies/#{params[:id]}/people/new" %>
+<%= link_to "Add a contact", new_company_person_path(params[:company_id]) %>
+<%= link_to "Back to company information", company_path(params[:company_id]) %>
