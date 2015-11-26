@@ -1,7 +1,7 @@
-<h1>Contacts for <%= @company.name %></h1>
+<h1>Contacts for <%= @specific_company.name %></h1>
   <ul>
-  <% @people.each do |person| %>
-    <li><%= link_to "#{person.name}", "/companies/#{@company_id}/people/#{person.id}/" %></li>
+  <% @specific_company.people.each do |person| %>
+    <li><%= link_to "#{person.name}", "/companies/#{person.company.id}/people/#{person.id}/" %></li>
   <% end %>
   </ul>
-<%= link_to "Add a person", "/companies/#{@company_id}/people/new" %>
+<%= link_to "Add a person", "/companies/#{params[:id]}/people/new" %>

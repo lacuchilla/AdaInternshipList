@@ -1,8 +1,9 @@
 class PeopleController < ApplicationController
   def index
-    @company_id = params[:company_id]
-    @company = Company.find(@person.company_id(params[:id]))
-    @people = Person.where(company_id: params[:company_id])
+    @specific_company = Company.find(params[:company_id])
+    # @company = Company.person.find(@company_id(params[:id]))
+    @specific_company.people
+    # Person.where(:@specific_company params[:company_id])
   end
 
   def new
