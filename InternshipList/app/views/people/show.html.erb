@@ -3,7 +3,7 @@
   <li><%= @person.name %></li>
   <li><%= @person.title %></li>
 </ul>
-<%= link_to "Edit Contact", "/companies/#{@person.company.id}/people/#{@person.id}/edit" %>
+<%= link_to "Edit Contact", edit_company_person_path(company_id: @person.company_id, :id => @person.id) %>
 <%= link_to "Delete Contact", "/companies/#{@person.company.id}/people/#{@person.id}/destroy", :method => :delete,
       :onclick => "return confirm('Are you sure you want to delete this contact?')" %>
 <%= link_to "Back to List of Companies", companies_path %>

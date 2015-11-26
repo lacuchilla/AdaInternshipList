@@ -25,7 +25,7 @@ class PeopleController < ApplicationController
   def edit
     @url = "edit"
     @legend = "Update a Contact"
-    @person = person_params[:person][:company_id]
+    @person = Person.find(params[:id])
   end
 
   def update
