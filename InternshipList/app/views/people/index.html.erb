@@ -1,7 +1,7 @@
 <h1>Contacts for <%= @specific_company.name %></h1>
   <ul>
   <% @specific_company.people.each do |person| %>
-    <li><%= link_to "#{person.name}", "/companies/#{person.company_id}/people/#{person.company_id}"%></li>
+    <li><%= link_to "#{person.name}", "/companies/#{person.company_id}/people/#{person.id}"%></li>
   <% end %>
   </ul>
 <%= link_to "Add a contact", new_company_person_path(params[:company_id]) %>
