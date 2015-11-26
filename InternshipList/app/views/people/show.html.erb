@@ -4,6 +4,6 @@
   <li><%= @person.title %></li>
 </ul>
 <%= link_to "Edit Contact", edit_company_person_path(company_id: @person.company_id, :id => @person.id) %>
-<%= link_to "Delete Contact", company_person_path(params[:id]), :method => :delete,
-      :onclick => "return confirm('Are you sure you want to delete this contact?')" %>
+<%= link_to "Delete Contact", company_person_path(params[:id], [:company_id]), :method => :delete,
+      data: { confirm: "Are you sure you want to delete this contact?"} %>
 <%= link_to "Back to List of Companies", companies_path %>
