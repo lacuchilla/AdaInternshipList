@@ -32,6 +32,9 @@ end
 person_list = [
   {name: "Caroline Harbitz", title: "Data Scientist", email: "caroline@nordstrom.com", company_id: 11},
   {name: "Gina Schmalzle", title: "Data Scientist", email: "gina@nordstrom.com", company_id: 11},
+  {name: "Dave Miller", title: "Recruiting", email: "davemiller@artefactgroup.com", company_id: 2},
+  {name: "Tom Dabson", title: "Engineering Director", email: "tom@artefactgroup.com", company_id: 2},
+  
 ]
 person_list.each do |person|
   Person.create(person)

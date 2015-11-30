@@ -1,9 +1,8 @@
-<h1>Here's the Company!</h1>
+<h1><%= @company.name %></h1>
 <ul>
-  <li><%= @company.name %></li>
-  <li><%= @company.location %></li>
-  <li><%= @company.description %></li>
-  <li><%= link_to @company.website, "#{@company.website}" %></li>
+  <li>Address: <%= @company.location %></li>
+  <li>Description: <%= @company.description %></li>
+  <li> Website: <%= link_to @company.website, "#{@company.website}" %></li>
 </ul>
 
 <ul>
@@ -12,3 +11,4 @@
       data: { confirm: "Are you sure you want to delete this company?"} %></li>
   <li><%= link_to "View People Associated With This Company", company_people_path(params[:id]) %></li>
   <li><%= link_to "Back to List of Companies", companies_path %></li>
+</ul>

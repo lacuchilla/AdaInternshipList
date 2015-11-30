@@ -6,6 +6,7 @@ class CompaniesController < ApplicationController
   def new
     @url = "create"
     @company = Company.new
+    @legend = "Add a Company"
   end
 
   def create
@@ -21,7 +22,6 @@ class CompaniesController < ApplicationController
     @url = "update"
     @legend = "Update Company Information"
     @company = Company.find(params[:id])
-
   end
 
   def update
