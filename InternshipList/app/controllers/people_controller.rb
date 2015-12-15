@@ -12,7 +12,7 @@ class PeopleController < ApplicationController
   end
 
   def create
-    person = Person.create(name: person_params[:person][:name], company_id: params[:company_id])
+    person = Person.create(name: person_params[:person][:name], title: person_params[:person][:title], email: person_params[:person][:email], company_id: params[:company_id])
     redirect_to company_people_path(params[:company_id])
   end
 
