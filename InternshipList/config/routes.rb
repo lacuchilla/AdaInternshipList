@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'users#index'
 
-  resources :users
+  resources :users, :only => [:new, :create]
 
   resources :companies do
     resources :people
