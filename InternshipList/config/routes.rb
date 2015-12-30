@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'users#index'
+  root 'sessions#index'
 
   resources :users, :only => [:index,:new, :create]
 
