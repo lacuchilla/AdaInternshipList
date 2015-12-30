@@ -1,6 +1,8 @@
 
 <% if !flash.now[:error].nil? %>
   <%= flash.now[:error] %>
+<% elsif !flash.now[:signup].nil? %>
+  <%= flash.now[:signup] %>
 <% else %>
   <h2>Hello ADA World!</h2>
 <% end %>
@@ -17,3 +19,6 @@
   <br>
   <%= f.submit "Sign In" %>
 <% end %>
+<br>
+<br>
+New user? Sign up here: <%= button_to "Sign Up", {:controller => :users, :action => 'new'}, :method => :get %>
