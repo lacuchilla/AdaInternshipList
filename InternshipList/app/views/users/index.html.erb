@@ -1,5 +1,4 @@
 <h2>Hello ADA World!</h2>
-<br>
 <h3>Login:</h3>
 <%= form_for :session_data, url: sessions_path do |f| %>
   <%= f.label :email %>
@@ -9,5 +8,6 @@
   <%= f.label :password %>
   <%= f.password_field :password %>
   <br>
-  <% f.submit %>
+  <br>
+  <%= f.submit "Sign In" %>
 <% end %>
