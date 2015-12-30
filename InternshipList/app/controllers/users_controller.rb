@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to companies_path
+      redirect_to sessions_path
     else
       flash.now[:error] = "Please ensure you are using a valid email address and that your passwords match"
       render :new
