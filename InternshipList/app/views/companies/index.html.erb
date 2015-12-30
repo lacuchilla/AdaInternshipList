@@ -1,5 +1,6 @@
-<% elsif !flash.now[:login].nil? %>
+<% if !session[:user_id].nil? %>
   <%= flash.now[:login] %>
+<% end %>
 <h2>Cohort 4</h2>
 <h3>List of Sponsor Companies</h3>
   <ul>
