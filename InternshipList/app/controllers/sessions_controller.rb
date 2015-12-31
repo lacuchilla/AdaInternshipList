@@ -4,14 +4,17 @@ class SessionsController < ApplicationController
 
   def create
     data = params[:session_data]
-    binding.pry
     @user = User.find_by_email(data[:email])
     if @user.nil?
       flash.now[:error] = "That email and password do not match or do not exist. Please try again or sign up."
       render :index
-    else
+    elsif @user.authenticate(data[:password])
+      session[:user_id] = @user.id
       flash[:login] = "Welcome #{@user.first_name}!"
       redirect_to companies_path
+    else
+      flash.now[:error] = "That email and password do not match or do not exist. Please try again or sign up."
+      render :index
     end
   end
 
