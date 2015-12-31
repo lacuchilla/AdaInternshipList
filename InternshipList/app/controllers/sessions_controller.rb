@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
 
   def create
     data = params[:session_data]
+    binding.pry
     @user = User.find_by_email(data[:email])
     if @user.nil?
       flash.now[:error] = "That email and password do not match or do not exist. Please try again or sign up."

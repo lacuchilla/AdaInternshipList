@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       flash[:signup] = "You have suscessfully signed up. Please login to continue."
       redirect_to root_path
     else
-      flash[:error] = "Please ensure you are using a valid email address and that your passwords match"
+      flash.now[:error] = "Please ensure you are using a valid email address and that your passwords match"
       render :new
     end
   end
