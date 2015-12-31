@@ -10,9 +10,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to sessions_path
+      flash[:signup] = "You have suscessfully signed up. Please login to continue."
+      redirect_to root_path
     else
-      flash.now[:error] = "Please ensure you are using a valid email address and that your passwords match"
+      flash[:error] = "Please ensure you are using a valid email address and that your passwords match"
       render :new
     end
   end

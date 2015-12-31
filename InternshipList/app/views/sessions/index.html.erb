@@ -1,8 +1,8 @@
 
 <% if !flash.now[:error].nil? %>
   <%= flash.now[:error] %>
-<% elsif !flash.now[:signup].nil? %>
-  <%= flash.now[:signup] %>
+<% elsif !flash[:signup].nil? %>
+  <%= flash[:signup] %>
 <% else %>
   <h2>Hello ADA World!</h2>
 <% end %>
