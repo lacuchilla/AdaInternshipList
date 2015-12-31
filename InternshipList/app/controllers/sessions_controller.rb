@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       flash.now[:error] = "That email and password do not match or do not exist. Please try again or sign up."
       render :index
     else
-      flash.now[:login] = "Welcome #{@user.first_name}!"
+      flash[:login] = "Welcome #{@user.first_name}!"
       redirect_to companies_path
     end
   end
