@@ -1,3 +1,7 @@
+<% if !session[:user_id].nil? %>
+  <br>
+  <%= flash[:login] %>
+<% end %>
 <h2>Cohort 4</h2>
 <h3>List of Sponsor Companies</h3>
   <ul>

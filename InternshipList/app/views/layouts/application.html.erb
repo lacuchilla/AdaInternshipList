@@ -11,6 +11,10 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto|Playfair+Display' rel='stylesheet' type='text/css'>
     <%= image_tag "adadevelopersacademy.png", class: "logo"%>
     <h1>Ada Developers Academy</h1>
+    <% if !session[:user_id].nil? %>
+      <%= button_to "logout", {:controller => :sessions,
+      :action => 'destroy'}, :method => :delete %>
+    <% end %>
   </header>
 
 <%= yield %>

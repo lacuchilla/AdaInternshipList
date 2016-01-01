@@ -1,0 +1,24 @@
+
+<% if !flash.now[:error].nil? %>
+  <%= flash.now[:error] %>
+<% elsif !flash[:signup].nil? %>
+  <%= flash[:signup] %>
+<% else %>
+  <h2>Hello ADA World!</h2>
+<% end %>
+
+<h3>Login:</h3>
+<%= form_for :session_data, url: sessions_path do |f| %>
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  <br>
+  <br>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br>
+  <br>
+  <%= f.submit "Sign In" %>
+<% end %>
+<br>
+<br>
+New user? Sign up here: <%= button_to "Sign Up", {:controller => :users, :action => 'new'}, :method => :get %>
